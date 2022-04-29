@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>This is a test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div class="w3-container w3-teal">
+    <h1>Welcome to A Live Demonstration on how the Governemnt spends money</h1>
+</div>
+<table>
+    <thead>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Description</td>
+    <td>Brand</td>
+    <td>Quantity</td>
+    </thead>
+
+    <tbody>
+    <tr th:each = "product: ${prodList}">
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.brand}"></td>
+        <td th:text="${product.quantity}"></td>
+        <td>
+            <a th:href="@{/showFormUpdate/{id}(id=${product.productId})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/deleteProduct/{id}(id=${product.productId})}" class="btn btn-danger">Remove</a>
+        </td>
+
+    </tr>
+
+    </tbody>
+
+</table>
+<h1>Hello World. Hi Nathan!</h1>
+</body>
+</html>
